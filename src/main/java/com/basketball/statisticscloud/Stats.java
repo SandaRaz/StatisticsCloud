@@ -16,6 +16,9 @@ public class Stats {
     private double point;
     private double passeDec;
     private double rebond;
+    @ManyToOne
+    @JoinColumn(name="idMatch")
+    private Match match;
 
     public Stats() {
     }
@@ -38,10 +41,6 @@ public class Stats {
         this.rebond = rebond;
         this.match = match;
     }
-
-    @ManyToOne
-    @JoinColumn(name="idMatch")
-    private Match match;
 
     public Long getIdStats() {
         return idStats;
